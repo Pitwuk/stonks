@@ -15,7 +15,6 @@ class NextDay():
         get = False
         found = False
         for i in cal.itermonthdates(self.year, self.month):
-            # print(str(i))
             if get:
                 found = True
                 self.date = str(i)
@@ -23,7 +22,6 @@ class NextDay():
                 self.month = int(self.date[5:7])
                 self.day = int(self.date[8:])
                 get = False
-                # print('Found')
                 break
             if(str(i) == self.date):
                 get = True
@@ -166,7 +164,7 @@ class NextDay():
                 self.getNextDay()
             self.getNextDay()
 
-        # christmas
+        # Christmas
         if self.day == 25 and self.month == 12:
             self.getNextDay()
             if int(calendar.weekday(self.year, 12, 25)) == 4:
